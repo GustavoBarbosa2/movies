@@ -11,7 +11,13 @@ const PORT = process.env.PORT || 3000;
 server.use(cors());
 server.use(express.json());
 
-server.use(express.static(path.join(__dirname, '..', 'frontend')));
+server.use(express.static(path.join(__dirname, '..', 'frontend'), {
+  setHeaders: (res, filePath) => {
+    if (filePath.endsWith('.js')) {
+      res.setHeader('Content-Type', 'application/javascript');
+    }
+  }
+}));
 
 server.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'frontend', 'pages', 'index.html'));
