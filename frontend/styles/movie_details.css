@@ -1,0 +1,264 @@
+/* Reset de margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #f2ff00;
+  color: rgb(0, 0, 0);
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2rem; 
+  font-weight: 600;
+}
+
+.movie-detail-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie-poster {
+  width: 320px;
+  height: 480px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.movie-info {
+  width: 100%;
+  max-width: 900px;
+  background-color: #f9fafb;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+  border-left: 6px solid #3b82f6;
+}
+
+.movie-info h2 {
+  font-size: 2.2rem;
+  color: #1e3a8a;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #e5e7eb;
+  padding-bottom: 12px;
+  position: relative;
+}
+
+.movie-info h2::before {
+  content: "🎬 ";
+  font-size: 1.8rem;
+  position: absolute;
+  left: -36px;
+  top: 0;
+}
+
+.movie-info p {
+  font-size: 1.05rem;
+  color: #374151;
+  margin-bottom: 12px;
+  padding-left: 8px;
+  border-left: 3px solid #93c5fd;
+  background-color: #f1f5f9;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: background-color 0.3s;
+}
+
+.movie-info p:hover {
+  background-color: #e0f2fe;
+}
+
+
+#comments-section {
+  width: 100%;
+  max-width: 900px;
+}
+
+#comments-section h3 {
+  font-size: 1.5rem;
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.comment-form {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.comment-form input,
+.comment-form textarea {
+  width: 100%;
+  font-size: 1rem;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  transition: border-color 0.2s;
+}
+
+.comment-form input:focus,
+.comment-form textarea:focus {
+  border-color: #3b82f6;
+  outline: none;
+}
+
+.comment-form button {
+  background-color: #3b82f6;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  align-self: flex-start;
+}
+
+.comment-form button:hover {
+  background-color: #2563eb;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+.comment-header {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+
+.edit-button,
+.delete-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  margin-left: 5px;
+}
+
+.comment-text {
+  margin-top: 10px;
+}
+
+.comment-date {
+  margin-top: 5px;
+  font-size: 12px;
+  color: #666;
+}
+
+.edit-comment-input {
+  width: 100%;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.edit-actions {
+  margin-top: 5px;
+}
+
+.save-button {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-right: 5px;
+}
+
+.cancel-button {
+  background-color: #f44336; /* Vermelho */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  margin-top: 32px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.back-button:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .movie-detail-container {
+    padding: 24px;
+    margin: 20px;
+  }
+
+  .movie-poster {
+    width: 100%;
+    height: auto;
+  }
+
+  .movie-info h2 {
+    font-size: 1.6rem;
+  }
+
+  .movie-info p {
+    font-size: 1rem;
+  }
+
+  .comment-form button,
+  .back-button {
+    font-size: 0.95rem;
+    padding: 10px 20px;
+  }
+}

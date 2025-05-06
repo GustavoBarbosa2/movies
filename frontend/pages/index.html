@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CineMujães</title>
+  <link rel="stylesheet" href="../styles/style.css" />
+</head>
+<body>
+  <header>
+    <h1>CineMujães</h1>
+  </header>
+
+  <div class="search-bar-container">
+    <input type="text" id="search-bar" placeholder="Search for a movie..." oninput="filterMovies()" />
+    <button id="filters-button" onclick="toggleFilters()">Filters</button>
+  </div>
+
+  <div class="filters" id="filters-panel" style="display: none;">
+    <div class="filter-section">
+      <h3>Genres</h3>
+      <div id="genre-buttons"></div>
+    </div>
+
+    <div class="filter-section">
+      <h3>Release Year</h3>
+      <select id="year-range">
+        <option value="">All</option>
+        <option value="1900-1925">1900 - 1925</option>
+        <option value="1926-1950">1926 - 1950</option>
+        <option value="1951-1975">1951 - 1975</option>
+        <option value="1976-2000">1976 - 2000</option>
+        <option value="2001-2025">2001 - 2025</option>
+      </select>
+    </div>
+
+    <div class="filter-section">
+      <h3>Min Runtime (minutes)</h3>
+      <input type="number" id="min-runtime" placeholder="e.g. 60" />
+    </div>
+
+    <div class="filter-section">
+      <h3>Min IMDb Rating</h3>
+      <input type="number" step="0.1" id="min-rating" placeholder="e.g. 7.0" />
+    </div>
+  </div>
+
+  <div class="movie-grid" id="movies-container"></div>
+
+  <script src="../scripts/script.js"></script>
+</body>
+</html>

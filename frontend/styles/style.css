@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #f2ff00;
+    color: rgb(0, 0, 0);
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 2rem; /* Tamanho do título reduzido */
+    font-weight: 600;
+}
+
+.search-bar-container {
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#search-bar {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+#filters-button {
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    padding: 8px 12px; /* Tamanho do botão reduzido */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem; /* Tamanho do texto do botão reduzido */
+    width: fit-content;
+}
+
+#filters-button:hover {
+    background-color: #115293;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 20px 30px;
+}
+
+.movie-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    position: relative;
+    height: 420px; /* Aumenta a altura do cartão */
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+}
+
+.movie-card img {
+    width: 100%;
+    height: 250px; /* Ajustado para reduzir o tamanho da imagem */
+    object-fit: cover;
+    background-color: #ddd;
+}
+
+.movie-card .movie-image-placeholder {
+    width: 100%;
+    height: 250px; /* Ajustado para reduzir o tamanho da imagem */
+    background-color: #ddd;
+}
+
+.movie-card h3 {
+    font-size: 1rem; /* Tamanho do título reduzido */
+    font-weight: 500;
+    margin: 10px 15px 15px; /* Diminui o espaço entre o título e a imagem */
+}
+
+.genres {
+    margin: 0 15px 10px; /* Diminui o espaço entre os gêneros e o título */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px; /* Diminui o espaçamento entre os gêneros */
+}
+
+.genre {
+    background-color: #eee;
+    padding: 3px 8px; /* Reduz o tamanho do gênero */
+    border-radius: 5px;
+    font-size: 0.8rem; /* Tamanho do texto dos gêneros reduzido */
+}
+
+.details-button {
+    position: absolute;
+    bottom: 15px; /* Coloca o botão mais para baixo */
+    left: 15px;
+    right: 15px;
+    padding: 12px; /* Tamanho do botão ainda mais reduzido */
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    text-align: center;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.8rem; /* Tamanho do texto do botão reduzido */
+}
+
+.details-button:hover {
+    background-color: #115293;
+}
+
+@media (max-width: 768px) {
+    .search-bar-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    }
+}
+
+/* Filtros */
+
+.filters {
+    background-color: #fff;
+    padding: 20px 30px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.filter-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-section h3 {
+    font-size: 0.9rem; /* Tamanho do título da seção de filtros reduzido */
+    margin-bottom: 8px;
+    color: #333;
+}
+
+#genre-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#genre-buttons button {
+    padding: 6px 12px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+#genre-buttons button.selected {
+    background-color: #1976d2;
+    color: white;
+    border-color: #1976d2;
+}
+
+#genre-buttons button:hover {
+    background-color: #ccc;
+}
+
+.filter-section select,
+.filter-section input[type="number"] {
+    padding: 8px 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
